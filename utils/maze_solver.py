@@ -5,9 +5,11 @@ def find_start_and_end(reduced_img):
     rows, cols = reduced_img.shape
 
     top_boundary = [(0, col) for col in range(cols) if reduced_img[0, col] == 1]
-    bottom_boundary = [(rows - 1, col) for col in range(cols) if reduced_img[rows - 1, col] == 1]
     left_boundary = [(row, 0) for row in range(rows) if reduced_img[row, 0] == 1]
     right_boundary = [(row, cols - 1) for row in range(rows) if reduced_img[row, cols - 1] == 1]
+    bottom_boundary = [(rows - 1, col) for col in range(cols) if reduced_img[rows - 1, col] == 1]
+    
+    
 
     boundary_points = top_boundary + bottom_boundary + left_boundary + right_boundary
 
